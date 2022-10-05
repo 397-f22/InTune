@@ -1,18 +1,21 @@
 // TODO: Add UI / UX for song recs here!
+import { useEffect, useState } from 'react';
 import {searchPlaylist} from '../utilities/SpotifyConnect'
 
-const playlist = async (weather) => {
-  await searchPlaylist(weather);
+var play = 'hellp'
 
-} 
 
-const SongRecommendationsPage = async({ weather }) => {
-  
-await playlist(weather);
-  console.log(playlist);
-  
+const SongRecommendationsPage = ({weather}) => {
+const [playlist,setPlaylist] = useState([]);
+
+useEffect(() => {
+  (async () => {
+    const plays = await searchPlaylist(weather);
+    setPlaylist(plays)
+  })();
+})
   return (
-  <h1>{playlist.items[0].name}</h1>
+  <h1>{playlist}</h1>
   )
 
   };

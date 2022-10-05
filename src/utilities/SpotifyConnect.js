@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const token = 'BQCz3ATPtlq6haTzJJ-3Gbrt_btJ_nf7G-GYauWptLojHDhy1SZOeFhHmXbQTPFF2gUolWiNuA8V5iFTT18YypvtjPm9MwMM18K1DoF_zcVkC-yw90sIwYjf1uENEg2TJnvwr22kre4qere_ph9sn4KBeXVLLaZpNK4_cJue7KitAg4'
-//GET https://api.spotify.com/v1/playlists/3cEYpjA9oz9GiPac4AsH4n
+const token = 'BQAkiiOcqcDgbH_0bNez74r-XcZuhl9FotShBb8aMhPwtyCRbg-p0b2O9M3GMgoFD9UBsx0cwNXM52XcRu0x3bMFN4N2lciyYKYHOzvSHfuy2UN_-Eq0Js_tWROJxA8CTC5-KWcda-zXEPdNBmA2I9L4DlnBTTJfp-lnS80ndr3pACw'
 
 export const searchPlaylist = async (weather) => {
-    // e.preventDefault()
+   // e.preventDefault()
+   console.log(weather)
     const {data} = await axios.get("https://api.spotify.com/v1/search", {
         headers: {
             Authorization: `Bearer ${token}`
@@ -15,5 +15,6 @@ export const searchPlaylist = async (weather) => {
             limit: 1
         }
     })
-    return data.playlists
+    console.log(data)
+    return data.playlists.items[0].name
 }
