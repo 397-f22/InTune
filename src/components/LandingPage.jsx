@@ -1,11 +1,13 @@
+import { Link } from 'react-router-dom';
 import "./LandingPage.css";
 
 const weatherTypes = ["", "sunny", "cloudy", "rainy", "snowy", "windy"];
 
 const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
-const handleSubmit = (weather) => {
+const handleSubmit = (event, weather) => {
   if (weather === "") {
+    event.preventDefault();
     alert("Please select a weather type.");
     return;
   };
@@ -23,7 +25,9 @@ const LandingPage = ({ weather, setWeather }) => (
         }
       </select>
     </div>
-    <input onClick={() => handleSubmit(weather)} className="weather-submit-button" type="button" value="View Songs!"></input>
+    <Link to="/songs" params={{ weather: weather }} onClick={(event) => handleSubmit(event, weather)}>
+      <input className="weather-submit-button" type="button" value="View Songs!" />
+    </Link>
   </div>
 );
 

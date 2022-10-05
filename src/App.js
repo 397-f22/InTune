@@ -1,6 +1,8 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
 import Header from './components/Header';
 import LandingPage from './components/LandingPage';
+import SongRecommendationsPage from "./components/SongRecommendationsPage";
 import './App.css';
 
 const App = () => {
@@ -8,11 +10,13 @@ const App = () => {
 
   return (
     <>
-      <Header></Header>
-      <LandingPage
-        weather={weather}
-        setWeather={setWeather}
-      />
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage weather={weather} setWeather={setWeather} />} />
+          <Route path="/songs" element={<SongRecommendationsPage weather={weather} />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };
