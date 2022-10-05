@@ -2,21 +2,20 @@
 import { useEffect, useState } from 'react';
 import { searchPlaylist } from '../utilities/SpotifyConnect'
 
-var play = 'hellp'
 
-
+//TODO: Use effect is spamming API calls need to check if already instatiated/called playlist
 const SongRecommendationsPage = ({ weather }) => {
   const [playlist, setPlaylist] = useState([]);
+console.log(playlist);
   useEffect(() => {
     (async () => {
-      console.log(weather)
       const plays = await searchPlaylist(weather);
       setPlaylist(plays)
     })();
   })
-  //            <img src={playlist.images[0].url} alt="Playlist Art"/>
+             
+//      <img src={playlist.images[0].url} alt="Playlist Art"/>
 
-  console.log(playlist)
   return (
     <div>
       <h1>{playlist.name}</h1>

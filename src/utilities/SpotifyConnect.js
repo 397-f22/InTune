@@ -22,7 +22,6 @@ export const searchPlaylist = async (weather) => {
             return res.json()
         }
     }).then(jsonResponse => {
-        console.log(jsonResponse.token)
         data = axios.get("https://api.spotify.com/v1/search", {
             headers: {
                 Authorization: `Bearer ${jsonResponse.token}`

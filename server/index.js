@@ -32,7 +32,6 @@ app.use(express.static(path.resolve(__dirname, '../public')));
 // Handle GET requests to /api route
 app.get("/api", (req, res) => {
   //here is where we would check what the req is(playlist or otherwise)
-  console.log("api token: " + token)
   res.json({ token });
 });
 
