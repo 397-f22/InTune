@@ -7,17 +7,18 @@ var play = 'hellp'
 
 const SongRecommendationsPage = ({ weather }) => {
   const [playlist, setPlaylist] = useState([]);
-
   useEffect(() => {
     (async () => {
+      console.log(weather)
       const plays = await searchPlaylist(weather);
       setPlaylist(plays)
     })();
   })
+  //            <img src={playlist.images[0].url} alt="Playlist Art"/>
+
   console.log(playlist)
   return (
     <div>
-            <img src={playlist.images[0].url} alt="Italian Trulli"/>
       <h1>{playlist.name}</h1>
     </div>
   )

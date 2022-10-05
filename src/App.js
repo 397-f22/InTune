@@ -10,8 +10,15 @@ const App = () => {
   const [weather, setWeather] = useState("");
 
   return (
-    <Hellow />
-  );
+    <>
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage weather={weather} setWeather={setWeather} />} />
+          <Route path="/songs" element={<SongRecommendationsPage weather={weather} />} />
+        </Routes>
+      </BrowserRouter>
+    </>  );
 };
 
 export default App;

@@ -21,7 +21,6 @@ var authOptions = {
 request.post(authOptions, function (error, response, body) {
   if (!error && response.statusCode === 200) {
     token = body.access_token;
-    console.log(token)
   }
 });
 
@@ -32,7 +31,9 @@ app.use(express.static(path.resolve(__dirname, '../public')));
 
 // Handle GET requests to /api route
 app.get("/api", (req, res) => {
-  res.json({ token: {token} });
+  //here is where we would check what the req is(playlist or otherwise)
+  console.log("api token: " + token)
+  res.json({ token });
 });
 
 // All other GET requests not handled before will return our React app
