@@ -16,5 +16,5 @@ export const searchPlaylist = async (weather) => {
         }
     })
     console.log(data)
-    return data.playlists.items[0].name
+    return data.playlists.items[0]
 }
