@@ -1,7 +1,13 @@
+import { useState } from 'react';
+import Header from './components/Header';
 import './App.css';
 
-const App = () => (
-  <h1>Hello world!</h1>
-);
+const App = () => {
+  const [weather, setWeather] = useState("");
+
+  return (
+    <Header></Header>
+  );
+};
 
 export default App;

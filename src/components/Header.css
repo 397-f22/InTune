@@ -1,0 +1,14 @@
+.header-top-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-name {
+  margin-right: 15px;
+}
+
+.logo-image {
+  width: 50px;
+}
