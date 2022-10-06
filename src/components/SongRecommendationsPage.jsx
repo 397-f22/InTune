@@ -1,41 +1,38 @@
-// TODO: Add UI / UX for song recs here!
-import { render } from '@testing-library/react';
 import { useEffect, useState } from 'react';
 import { searchPlaylist, findSongs } from '../utilities/SpotifyConnect'
-
+import SongRow from './SongRow';
+import "./SongRecommendationsPage.css";
 
 const SongRecommendationsPage = ({ weather }) => {
   const [playlist, setPlaylist] = useState([]);
   const [songs, setSongs] = useState([]);
-console.log(playlist);
+
   useEffect(() => {
     (async () => {
       const plays = await searchPlaylist(weather);
-      setPlaylist(plays)
-      let songdata = await findSongs(plays)
-      setSongs(songdata)
-      //console.log(songs.items[0].track.external_urls.spotify);
+      setPlaylist(plays);
 
-
+      const songdata = await findSongs(plays);
+      setSongs(songdata);
     })();
   },[])
-             
-//      <img src={playlist.images[0].url} alt="Playlist Art"/>
 
-  if (songs.length === 0) return <div>Loading Songs…</div>
-  return (
+  return (songs.length === 0)
+  ? <div>Loading Songs…</div>
+  : (
     <div>
-      <div>{songs.items.map(song => (
-        <div>
-          <img src={song.track.album.images[0].url} alt="Song Image" />
-          <a href={song.track.external_urls.spotify}>
-            {song.track.name}
-          </a>
-        </div>
-      ))}</div>
+      <div className="songs-list">
+        {songs.items.map((song, id) => (
+          <SongRow
+            key={id}
+            songTitle={song.track.name}
+            imageUrl={song.track.album.images[0].url}
+            spotifyUrl={song.track.external_urls.spotify}
+          />
+        ))}
+      </div>
     </div>
   )
-
 };
 
 export default SongRecommendationsPage;

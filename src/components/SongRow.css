@@ -1,0 +1,15 @@
+.song-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: calc(50vw - 120px);
+  margin-bottom: 25px;
+}
+
+.song-image {
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  border: 1px solid black;
+  margin-right: 50px;
+}
