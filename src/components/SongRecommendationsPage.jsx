@@ -3,6 +3,8 @@ import { searchPlaylist, findSongs } from '../utilities/SpotifyConnect'
 import SongRow from './SongRow';
 import "./SongRecommendationsPage.css";
 
+const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+
 const SongRecommendationsPage = ({ weather }) => {
   const [playlist, setPlaylist] = useState([]);
   const [songs, setSongs] = useState([]);
@@ -21,6 +23,10 @@ const SongRecommendationsPage = ({ weather }) => {
   ? <div>Loading Songs…</div>
   : (
     <div>
+      <ul className="user-metadata">
+        <li>Recommended Songs for Weather Type: <b>{capitalize(weather)}</b></li>
+      </ul>
+      <hr className="line-divide"/>
       <div className="songs-list">
         {songs.items.map((song, id) => (
           <SongRow
