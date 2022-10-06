@@ -1,6 +1,6 @@
 // TODO: Add UI / UX for song recs here!
 import { useEffect, useState } from 'react';
-import { searchPlaylist } from '../utilities/SpotifyConnect'
+import { searchPlaylist, findSongs } from '../utilities/SpotifyConnect'
 
 
 const SongRecommendationsPage = ({ weather }) => {
@@ -10,6 +10,9 @@ console.log(playlist);
     (async () => {
       const plays = await searchPlaylist(weather);
       setPlaylist(plays)
+      const songs = await findSongs(plays)
+      console.log(songs);
+
     })();
   },[])
              

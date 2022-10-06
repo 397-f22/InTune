@@ -37,3 +37,24 @@ export const searchPlaylist = async (weather) => {
     })
     return data.then(resp => {return resp.playlists.items[0]})
 }
+
+export const findSongs = async (playlist) => {
+    var data;
+    await fetch('/api').then(res => {
+        if (res.ok) {
+            return res.json()
+        }
+    }).then(jsonResponse => {
+        data = axios.get(`https://api.spotify.com/v1/playlists/${playlist.id}/tracks`, {
+            headers: {
+                Authorization: `Bearer ${jsonResponse.token}`
+            },
+            params: {
+                limit: 4
+            }
+        }).then(function (reponse) {
+            return reponse.data
+        })
+    })
+    return data.then(resp => {return resp;})
+}
