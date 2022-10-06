@@ -4,10 +4,24 @@
   align-items: center;
 }
 
+.line-divide {
+  margin-top: 30px;
+  margin-bottom: 0;
+  border: 1px solid black;
+  width: 100%;
+}
+
+.bottom-section {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(173, 216, 230, 0.7);
+}
+
 .weather-select-dropdown {
   display: flex;
   flex-direction: column;
-  margin: 50px auto 0 auto;
+  padding-top: 30px;
+  margin: 0 auto;
   width: 250px;
 }
 
@@ -28,9 +42,11 @@
   height: 30px;
   border-radius: 12px;
   margin-top: 20px;
+  margin-left: calc(50vw - 50px);
   background-color: green;
   color: white;
   border: 1px solid black;
+  cursor: pointer;
 }
 
 .weather-submit-button:hover {
@@ -39,7 +55,7 @@
 
 .weather-submit-button:active {
   opacity: 0.7;
-  box-shadow: 5px 5px 5px lightgray;
+  box-shadow: 5px 5px 5px gray;
 }
 
 
