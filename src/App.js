@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from 'react';
 import Header from './components/Header';
 import LandingPage from './components/LandingPage';
@@ -14,7 +14,14 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage weather={weather} setWeather={setWeather} />} />
-          <Route path="/songs" element={<SongRecommendationsPage weather={weather} />} />
+          <Route
+            path="/songs"
+            element = {
+                        (weather === "")
+                        ? <Navigate to="/" />
+                        : <SongRecommendationsPage weather={weather} />
+                      }
+          />
         </Routes>
       </BrowserRouter>
     </>  );
