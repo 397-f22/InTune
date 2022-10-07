@@ -11,4 +11,5 @@
 
 .logo-image {
   width: 50px;
+  border-radius: 1px solid black;
 }
