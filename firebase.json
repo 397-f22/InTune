@@ -9,15 +9,15 @@
     "rewrites": [
       {
         "source": "**",
+        "function": "app",
         "destination": "/index.html"
       }
     ]
   },
   "functions": [
     {
-      "source": "server",
-      "runtime": "nodejs16",
-      "codebase": "server",
+      "source": "functions",
+      "codebase": "functions",
       "ignore": [
         "node_modules",
         ".git",
