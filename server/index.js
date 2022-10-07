@@ -6,6 +6,8 @@ const express = require('express');
 const request = require('request');
 const app = express();
 const path = require('path');
+const functions = require("firebase-functions");
+
 
 var authOptions = {
   url: 'https://accounts.spotify.com/api/token',
@@ -43,3 +45,4 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
+exports.app = functions.https.onRequest(app);
