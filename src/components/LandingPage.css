@@ -5,7 +5,7 @@
 }
 
 .line-divide {
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 0;
   border: 1px solid black;
   width: 100%;
@@ -43,7 +43,7 @@
   border-radius: 12px;
   margin-top: 20px;
   margin-left: calc(50vw - 50px);
-  background-color: green;
+  background-color: rgb(43, 79, 162);
   color: white;
   border: 1px solid black;
   cursor: pointer;

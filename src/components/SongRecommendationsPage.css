@@ -1,7 +1,10 @@
 .user-metadata {
   display: flex;
   justify-content: center;
-  transform: translateX(-20px);
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* transform: translateX(-20px); */
 }
 
 .line-divide {
@@ -14,4 +17,25 @@
   padding-top: 30px;
   background-color: rgba(173, 216, 230, 0.7);
   height: 100%;
+}
+
+.go-home-button {
+  width: 100px;
+  height: 30px;
+  border-radius: 12px;
+  margin-top: 20px;
+  margin-left: calc(50vw - 50px);
+  background-color: rgb(43, 79, 162);
+  color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.go-home-button:hover {
+  opacity: 0.8;
+}
+
+.go-home-button:active {
+  opacity: 0.7;
+  box-shadow: 5px 5px 5px gray;
 }

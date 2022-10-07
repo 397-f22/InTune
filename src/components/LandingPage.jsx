@@ -27,7 +27,7 @@ const LandingPage = ({ weather, setWeather }) => (
           }
         </select>
       </div>
-      <Link to="/songs" params={{ weather: weather }} onClick={(event) => handleSubmit(event, weather)}>
+      <Link to="/songs" params={{ weather: weather, setWeather: setWeather }} onClick={(event) => handleSubmit(event, weather)}>
         <input className="weather-submit-button" type="button" value="View Songs!" />
       </Link>
     </div>
