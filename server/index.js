@@ -1,6 +1,6 @@
 const client_id = '50b9072a4f584a75b485ca320331132b'
 const client_secret = '7016177d36864800a4cd676c291309a4'
-var token = 'BQCz3ATPtlq6haTzJJ-3Gbrt_btJ_nf7G-GYauWptLojHDhy1SZOeFhHmXbQTPFF2gUolWiNuA8V5iFTT18YypvtjPm9MwMM18K1DoF_zcVkC-yw90sIwYjf1uENEg2TJnvwr22kre4qere_ph9sn4KBeXVLLaZpNK4_cJue7KitAg4'
+var token;
 const PORT = process.env.PORT || 3001;
 const express = require('express');
 const request = require('request');
