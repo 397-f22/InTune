@@ -1,5 +1,4 @@
 import axios from "axios";
-import { json } from "react-router-dom";
 
 //import token from BE here
 
@@ -15,9 +14,10 @@ import { json } from "react-router-dom";
 //     console.log(initState.message)
 //     return(<h1>hello</h1>);
 // }
+const SERVER = 'https://us-central1-intune-ab424.cloudfunctions.net/app'
 export const searchPlaylist = async (weather) => {
     var data;
-    await fetch('/api').then(res => {
+    await fetch(SERVER).then(res => {
         if (res.ok) {
             return res.json()
         }
