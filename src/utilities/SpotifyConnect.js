@@ -1,20 +1,60 @@
 import axios from "axios";
+import { json } from "react-router-dom";
 
-const token = 'BQAkiiOcqcDgbH_0bNez74r-XcZuhl9FotShBb8aMhPwtyCRbg-p0b2O9M3GMgoFD9UBsx0cwNXM52XcRu0x3bMFN4N2lciyYKYHOzvSHfuy2UN_-Eq0Js_tWROJxA8CTC5-KWcda-zXEPdNBmA2I9L4DlnBTTJfp-lnS80ndr3pACw'
+//import token from BE here
 
+// export const Hellow = () => {
+//     const [initState, setInitState] = useState([])
+//     useEffect(()=>{
+// fetch('/api').then(res => {
+//     if(res.ok){
+//         return res.json()
+//     }
+// }).then(jsonResponse => setInitState(jsonResponse))
+//     },[])
+//     console.log(initState.message)
+//     return(<h1>hello</h1>);
+// }
 export const searchPlaylist = async (weather) => {
-   // e.preventDefault()
-   console.log(weather)
-    const {data} = await axios.get("https://api.spotify.com/v1/search", {
-        headers: {
-            Authorization: `Bearer ${token}`
-        },
-        params: {
-            q: weather,
-            type: "playlist",
-            limit: 1
+    var data;
+    await fetch('/api').then(res => {
+        if (res.ok) {
+            return res.json()
         }
+    }).then(jsonResponse => {
+        data = axios.get("https://api.spotify.com/v1/search", {
+            headers: {
+                Authorization: `Bearer ${jsonResponse.token}`
+            },
+            params: {
+                q: weather,
+                type: "playlist",
+                limit: 1
+            }
+        }).then(function (reponse) {
+            return reponse.data
+        })
     })
-    console.log(data)
-    return data.playlists.items[0].name
+    return data.then(resp => {return resp.playlists.items[0]})
+}
+
+export const findSongs = async (playlist) => {
+    var data;
+    await fetch('/api').then(res => {
+        if (res.ok) {
+            return res.json()
+        }
+    }).then(jsonResponse => {
+        data = axios.get(`https://api.spotify.com/v1/playlists/${playlist.id}/tracks`, {
+            headers: {
+                Authorization: `Bearer ${jsonResponse.token}`
+            },
+            params: {
+                limit: 4
+            }
+        }).then(function (reponse) {
+            return reponse.data
+        })
+    })
+    return data.then(resp => {return resp;})
 }
