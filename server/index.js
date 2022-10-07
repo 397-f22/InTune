@@ -1,7 +1,7 @@
 const client_id = '50b9072a4f584a75b485ca320331132b'
 const client_secret = '7016177d36864800a4cd676c291309a4'
 var token;
-const PORT = process.env.PORT || 3001;
+//const PORT = process.env.PORT || 3001;
 const express = require('express');
 const request = require('request');
 const app = express();
@@ -42,7 +42,4 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../public', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
-});
 exports.app = functions.https.onRequest(app);
