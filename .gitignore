@@ -22,3 +22,7 @@ server/node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.firebase/hosting.YnVpbGQ.cache
+server/ui-debug.log
+functions/ui-debug.log
+.firebase/hosting.YnVpbGQ.cache

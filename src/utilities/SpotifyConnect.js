@@ -40,7 +40,7 @@ export const searchPlaylist = async (weather) => {
 
 export const findSongs = async (playlist) => {
     var data;
-    await fetch('/api').then(res => {
+    await fetch(SERVER + '/api').then(res => {
         if (res.ok) {
             return res.json()
         }

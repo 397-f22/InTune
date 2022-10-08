@@ -9,17 +9,11 @@ const functions = require("firebase-functions");
 const cors = require('cors');
 
 
-var whitelist = ['https://intune-ab424.web.app', 'http://localhost:3000']
+//Not used since we are allowing for all origins
 var corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
+    origin: 'https://intune-ab424.web.app',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   }
-}
-
 
 var authOptions = {
   url: 'https://accounts.spotify.com/api/token',
@@ -44,7 +38,7 @@ request.post(authOptions, function (error, response, body) {
 app.use(express.static(path.resolve(__dirname, '../public')));
 
 // Handle GET requests to /api route
-app.get("/api",cors(corsOptions), (req, res) => {
+app.get("/api",cors(), (req, res) => {
   //here is where we would check what the req is(playlist or otherwise)
   res.json({ token });
 });
