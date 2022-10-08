@@ -17,7 +17,7 @@ import axios from "axios";
 const SERVER = 'https://us-central1-intune-ab424.cloudfunctions.net/app'
 export const searchPlaylist = async (weather) => {
     var data;
-    await fetch(SERVER).then(res => {
+    await fetch(SERVER + '/api').then(res => {
         if (res.ok) {
             return res.json()
         }
