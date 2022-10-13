@@ -1,14 +1,26 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import LandingPage from './components/LandingPage';
 import SongRecommendationsPage from "./components/SongRecommendationsPage";
 import './App.css';
-import { getLocation } from "./utilities/location";
+import { getLocation, getLocationDetails } from "./utilities/location";
 
 const App = () => {
   const [weather, setWeather] = useState("");
-  getLocation();
+  const [w, setW] = useState("")
+  // getLocation();
+
+  getLocationDetails()
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const w = await getLocationDetails();
+  //     setW(w);
+  //   })();
+  // },[])
+
+  console.log(w);
 
   return (
     <>

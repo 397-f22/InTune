@@ -52,8 +52,8 @@ export const findSongs = async (playlist) => {
             params: {
                 limit: 4
             }
-        }).then(function (reponse) {
-            return reponse.data
+        }).then(function (response) {
+            return response.data
         })
     })
     return data.then(resp => {return resp;})
