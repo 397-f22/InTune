@@ -48,13 +48,25 @@ export const findSongs = async (playlist) => {
         data = axios.get(`https://api.spotify.com/v1/playlists/${playlist.id}/tracks`, {
             headers: {
                 Authorization: `Bearer ${jsonResponse.token}`
-            },
-            params: {
-                limit: 4
             }
         }).then(function (response) {
             return response.data
         })
     })
-    return data.then(resp => {return resp;})
+    let songs = data.then(resp => {
+        let vals = [];
+        let result_songs = [];
+        console.log(resp)
+        while (result_songs.length < 4) {
+            let random = Math.floor(resp.items.length * Math.random())
+            if (!vals.includes(random)) {
+                result_songs.push(resp.items[random].track)
+                vals.push(random)
+            }
+        }
+        
+        return result_songs
+        })
+    
+    return songs
 }
