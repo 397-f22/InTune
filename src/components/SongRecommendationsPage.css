@@ -4,7 +4,6 @@
   text-align: center;
   margin-left: 10px;
   margin-right: 10px;
-  /* transform: translateX(-20px); */
 }
 
 .line-divide {
@@ -19,7 +18,7 @@
   height: 100%;
 }
 
-.go-home-button {
+.regenerate-songs-button {
   width: 100px;
   height: 30px;
   border-radius: 12px;
@@ -31,11 +30,11 @@
   cursor: pointer;
 }
 
-.go-home-button:hover {
+.regenerate-songs-button:hover {
   opacity: 0.8;
 }
 
-.go-home-button:active {
+.regenerate-songs-button:active {
   opacity: 0.7;
   box-shadow: 5px 5px 5px gray;
 }

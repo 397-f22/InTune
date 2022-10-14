@@ -1,20 +1,7 @@
 import axios from "axios";
 
-//import token from BE here
+const SERVER = 'https://us-central1-intune-ab424.cloudfunctions.net/app';
 
-// export const Hellow = () => {
-//     const [initState, setInitState] = useState([])
-//     useEffect(()=>{
-// fetch('/api').then(res => {
-//     if(res.ok){
-//         return res.json()
-//     }
-// }).then(jsonResponse => setInitState(jsonResponse))
-//     },[])
-//     console.log(initState.message)
-//     return(<h1>hello</h1>);
-// }
-const SERVER = 'https://us-central1-intune-ab424.cloudfunctions.net/app'
 export const searchPlaylist = async (weather) => {
     var data;
     await fetch(SERVER + '/api').then(res => {
