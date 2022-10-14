@@ -2,8 +2,21 @@ import axios from "axios";
 
 const SERVER = 'https://us-central1-intune-ab424.cloudfunctions.net/app';
 
+
+export const timeOfDay = () => {
+    const today = new Date();
+    const time = today.getHours()
+    return  (6<=time && time<12) ? "Morning" :
+            (12<=time && time<16) ? "Afternoon":
+            (16<=time && time<22) ? "Evening":
+           "Night"
+
+}
+
 export const searchPlaylist = async (weather) => {
     var data;
+    const queryRange = 5
+    console.log(timeOfDay())
     await fetch(SERVER + '/api').then(res => {
         if (res.ok) {
             return res.json()
@@ -14,15 +27,15 @@ export const searchPlaylist = async (weather) => {
                 Authorization: `Bearer ${jsonResponse.token}`
             },
             params: {
-                q: weather,
+                q: weather +" "+ timeOfDay(),
                 type: "playlist",
-                limit: 1
+                limit: queryRange
             }
         }).then(function (reponse) {
             return reponse.data
         })
     })
-    return data.then(resp => {return resp.playlists.items[0]})
+    return data.then(resp => {return resp.playlists.items[Math.floor(Math.random()*queryRange)]})
 }
 
 export const findSongs = async (playlist) => {
