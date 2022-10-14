@@ -6,8 +6,13 @@
   margin-right: 10px;
 }
 
+.playlist-link {
+  justify-content: center;
+  text-align: center;
+}
 .playlist-link a{
-  display: flex;
+
+  display: flexbox;
   justify-content: center;
   text-align: center;
   margin-left: 10px;
