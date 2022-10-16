@@ -3,9 +3,11 @@ const asyncGetLocation = () => new Promise((resolve, reject) => {
 
     // NOTE: Conditional render based on if permission granted or not...
     // can do some more logic / diff behavior here if you want
-    if (result.state === 'granted') {
+    if (result.state !== 'denied') {
       navigator.geolocation.getCurrentPosition(resolve, reject);
-    } else {
+    
+    }
+    else{
       reject("Error loading geolocation data");
     };
   });
