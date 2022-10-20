@@ -30,13 +30,6 @@ const App = () => {
     };
   });
 
-  // document.addEventListener('DOMContentLoaded', () => {
-  //   document.getElementById("loading-app-wrapper").style.backgroundImage = styleStr;
-  //   console.log("test")
-  //   console.log(document.getElementById("standard-app-wrapper"));
-  //   document.getElementById("standard-app-wrapper").style.backgroundImage = styleStr;
-  // });
-
   useEffect(() => {
     (async () => {
       const weather = await getLocationDetails();

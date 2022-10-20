@@ -79,7 +79,7 @@ export const findSongs = async (playlist) => {
     let songs = data.then(resp => {
         let vals = [];
         let result_songs = [];
-        console.log(resp)
+
         while (result_songs.length < 4) {
             let random = Math.floor(resp.items.length * Math.random())
             if (!vals.includes(random)) {
