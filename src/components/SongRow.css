@@ -6,6 +6,21 @@
   margin-bottom: 25px;
 }
 
+.song-link {
+  display: flexbox;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: solid;
+  font-weight: bolder;
+  color: rgb(43, 79, 162);
+}
+
+.song-link:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+
 .song-image {
   width: 75px;
   height: 75px;

@@ -7,14 +7,12 @@
 .line-divide {
   margin-top: 10px;
   margin-bottom: 0;
-  border: 1px solid black;
   width: 100%;
 }
 
 .bottom-section {
   height: 100vh;
   width: 100%;
-  background-color: rgba(173, 216, 230, 0.7);
 }
 
 .weather-select-dropdown {

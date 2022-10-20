@@ -1,3 +1,7 @@
+/* .upper-section {
+  background-image: linear-gradient(to bottom, #ffffff, #D1C3BE);
+} */
+
 .user-metadata {
   display: flex;
   align-items: center;
@@ -29,12 +33,10 @@
 .line-divide {
   margin-top: 30px;
   margin-bottom: 0;
-  border: 1px solid black;
 }
 
 .songs-list {
   padding-top: 30px;
-  background-color: rgba(173, 216, 230, 0.7);
   height: 100%;
 }
 
@@ -62,7 +64,5 @@
 .weather-icon {
   width: 40px;
   height: 40px;
-  border-radius: 5px;
-  border: 1px solid black;
   margin-left: 1vw;
 }

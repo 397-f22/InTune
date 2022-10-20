@@ -15,7 +15,6 @@ const handleSubmit = (event, weather) => {
 
 const LandingPage = ({ weather, setWeather }) => (
   <div className="landing-page">
-    <hr className="line-divide" />
     <div className="bottom-section">
       <div className="weather-select-dropdown">
         <label className="weather-select-label">Select Weather:</label>

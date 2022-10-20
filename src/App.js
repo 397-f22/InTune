@@ -47,7 +47,7 @@ const App = () => {
       );
     } else {
       return (
-        <>
+        <div className="color-gradient">
           <Header />
           <BrowserRouter>
             <Routes>
@@ -77,7 +77,7 @@ const App = () => {
               />
             </Routes>
           </BrowserRouter>
-        </>
+        </div>
       );
     };
 };
