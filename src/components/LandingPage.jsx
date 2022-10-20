@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import "./LandingPage.css";
 
-const weatherTypes = ["", "sunny", "cloudy", "rainy", "snowy", "windy"];
+const weatherTypes = ["", "sunny", "cloudy", "rainy", "snowy"];
 
 const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 

@@ -1,9 +1,10 @@
 .user-metadata {
   display: flex;
+  align-items: center;
   justify-content: center;
   text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0 auto;
+  max-width: 70%;
 }
 
 .playlist-link {
@@ -21,7 +22,7 @@
   font-weight: bolder;
   color: rgb(43, 79, 162);
 }
-.playlist-link a:hover{
+.playlist-link a:hover {
   text-decoration: underline;
   color: black;
 }
@@ -56,4 +57,12 @@
 .regenerate-songs-button:active {
   opacity: 0.7;
   box-shadow: 5px 5px 5px gray;
+}
+
+.weather-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-left: 1vw;
 }
