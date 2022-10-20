@@ -4,7 +4,8 @@ import Header from './components/Header';
 import LandingPage from './components/LandingPage';
 import SongRecommendationsPage from "./components/SongRecommendationsPage";
 import './App.css';
-import { getLocationDetails, getSeason } from "./utilities/location";
+import { getLocationDetails } from "./utilities/Location";
+import { getSeason } from "./utilities/GetDateMetadata";
 
 const App = () => {
 

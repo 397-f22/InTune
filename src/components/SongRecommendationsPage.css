@@ -15,8 +15,7 @@
   justify-content: center;
   text-align: center;
 }
-.playlist-link a{
-
+.playlist-link a {
   display: flexbox;
   justify-content: center;
   text-align: center;
@@ -26,6 +25,7 @@
   font-weight: bolder;
   color: rgb(43, 79, 162);
 }
+
 .playlist-link a:hover {
   text-decoration: underline;
   color: black;

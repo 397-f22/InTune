@@ -1,5 +1,5 @@
 import axios from "axios";
-import { timeOfDay, getSeason } from "./location";
+import { timeOfDay, getSeason } from "./GetDateMetadata";
 
 const SERVER = 'https://us-central1-intune-ab424.cloudfunctions.net/app';
 

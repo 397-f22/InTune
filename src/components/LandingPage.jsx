@@ -2,11 +2,10 @@ import { Link } from 'react-router-dom';
 import "./LandingPage.css";
 
 const weatherTypes = ["", "sunny", "cloudy", "rainy", "snowy"];
-
 const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
 const handleSubmit = (event, weather) => {
-  if (weather === "") {
+  if (weather === "Error") {
     event.preventDefault();
     alert("Please select a weather type.");
     return;
