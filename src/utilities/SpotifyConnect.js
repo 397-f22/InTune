@@ -1,22 +1,14 @@
 import axios from "axios";
+import { timeOfDay, getSeason } from "./location";
 
 const SERVER = 'https://us-central1-intune-ab424.cloudfunctions.net/app';
 
 var token;
-export const timeOfDay = () => {
-    const today = new Date();
-    const time = today.getHours()
-    return (6 <= time && time < 12) ? "Morning" :
-        (12 <= time && time < 16) ? "Afternoon" :
-            (16 <= time && time < 22) ? "Evening" :
-                "Night"
-
-}
 
 export const searchPlaylist = async (weather) => {
     var data;
     const queryRange = 5
-    console.log(timeOfDay())
+
     if (!token) {
         await fetch(SERVER + '/api').then(res => {
             if (res.ok) {
@@ -30,7 +22,7 @@ export const searchPlaylist = async (weather) => {
                     Authorization: `Bearer ${jsonResponse.token}`
                 },
                 params: {
-                    q: weather + " " + timeOfDay(),
+                    q: weather + " " + timeOfDay() + " " + getSeason(),
                     type: "playlist",
                     limit: queryRange
                 }
