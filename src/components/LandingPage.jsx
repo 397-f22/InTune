@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
+import { weatherTypes, capitalize } from '../utilities/Assets';
 import "./LandingPage.css";
-
-const weatherTypes = ["", "sunny", "cloudy", "rainy", "snowy"];
-const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
 const handleSubmit = (event, weather) => {
   if (weather === "Error") {
