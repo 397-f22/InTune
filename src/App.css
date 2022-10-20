@@ -1,3 +1,18 @@
-.color-gradient {
-    background-image: linear-gradient(to top, #fb9332, #f6caa1);
+.color-gradient-fall {
+  background-image: linear-gradient(to top, #fb9332, #f6caa1);
 }
+
+.color-gradient-winter {
+  background-image: linear-gradient(to top, #3092d3, #b8e4f3);
+}
+
+.color-gradient-spring {
+  background-image: linear-gradient(to top, #3e7d50, #b6f3bf);
+}
+
+.color-gradient-summer {
+  background-image: linear-gradient(to top, #9fb523, #f0e8a1);
+}
+
+
+

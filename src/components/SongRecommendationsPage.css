@@ -1,6 +1,6 @@
-/* .upper-section {
-  background-image: linear-gradient(to bottom, #ffffff, #D1C3BE);
-} */
+.filler-text {
+  height: 100%;
+}
 
 .user-metadata {
   display: flex;
@@ -45,7 +45,7 @@
   height: 30px;
   border-radius: 12px;
   margin-top: 20px;
-  margin-left: calc(50vw - 60px);
+  margin-left: calc(50vw - 50px);
   background-color: rgb(43, 79, 162);
   color: white;
   border: 1px solid black;

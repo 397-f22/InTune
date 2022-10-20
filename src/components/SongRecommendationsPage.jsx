@@ -34,13 +34,8 @@ const SongRecommendationsPage = ({ weather, setWeather, weatherIcon, autoGenerat
     })();
   }, [])
 
-  // const getColor = () => {
-  //   const season = getSeason();
-  //   season 
-  // }
-
   return (songs.length === 0)
-    ? <div>Loading Songs…</div>
+    ? <div className='filler-text'>Loading Songs…</div>
     : (
       <>
         <div>

@@ -4,7 +4,7 @@ import Header from './components/Header';
 import LandingPage from './components/LandingPage';
 import SongRecommendationsPage from "./components/SongRecommendationsPage";
 import './App.css';
-import { getLocationDetails } from "./utilities/location";
+import { getLocationDetails, getSeason } from "./utilities/location";
 
 const App = () => {
 
@@ -47,7 +47,7 @@ const App = () => {
       );
     } else {
       return (
-        <div className="color-gradient">
+        <div className={`color-gradient-${getSeason().toLowerCase()}`}>
           <Header />
           <BrowserRouter>
             <Routes>
