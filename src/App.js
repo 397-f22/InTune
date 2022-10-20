@@ -23,6 +23,7 @@ const App = () => {
   useEffect(() => {
     if (document.getElementById("loading-app-wrapper") !== null) {
       document.getElementById("loading-app-wrapper").style.backgroundImage = styleStr;
+      document.getElementById("loading-app-wrapper").style.height = "100%";
     };
 
     if (document.getElementById("standard-app-wrapper") !== null) {
