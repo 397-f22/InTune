@@ -5,8 +5,7 @@ export const timeOfDay = () => {
     (12 <= time && time < 16) ? "Afternoon" :
     (16 <= time && time < 22) ? "Evening" :
     "Night"
-
-}
+};
 
 export const getSeason = () => {
   const today = new Date();
@@ -15,4 +14,4 @@ export const getSeason = () => {
     (month <= 5) ? "Spring" :
     (month <= 8) ? "Summer" :
     "Fall"
-}
+};
