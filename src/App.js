@@ -7,6 +7,7 @@ import { getLocationDetails } from "./utilities/Location";
 import { getSeason, timeOfDay } from "./utilities/GetDateMetadata";
 import { weatherDict, backgroundColorsBySeason, timeOfDayToOpacity } from "./utilities/Assets";
 import './App.css';
+import loading from './SimpleCloud.gif';
 
 const App = () => {
   const [weather, setWeather] = useState("");
@@ -21,12 +22,9 @@ const App = () => {
   const styleStr = `linear-gradient(to top, ${bottomBackgroundColor}, ${topBackgroundColor})`;
 
   useEffect(() => {
-    if (document.getElementById("loading-app-wrapper") !== null) {
-      document.getElementById("loading-app-wrapper").style.backgroundImage = styleStr;
-      document.getElementById("loading-app-wrapper").style.height = "100%";
-    };
-
+    
     if (document.getElementById("standard-app-wrapper") !== null) {
+      document.getElementById("standard-app-wrapper").style.height = "100%";
       document.getElementById("standard-app-wrapper").style.backgroundImage = styleStr;
     };
   });
@@ -52,7 +50,10 @@ const App = () => {
 
     if (!weather) {
       return (
-        <div id="loading-app-wrapper">Loading geolocation and weather data...</div>
+        <div id="standard-app-wrapper">
+          <Header />
+          <img src={loading} className='loading-gif'/>
+        </div>
       );
     } else {
       return (
