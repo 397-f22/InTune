@@ -6,14 +6,6 @@
   margin-bottom: 25px;
 }
 
-.song-link {
-  display: flexbox;
-  margin-left: 10px;
-  margin-right: 10px;
-  text-decoration: solid;
-  font-weight: bolder;
-  color: rgb(43, 79, 162);
-}
 
 .song-link:hover {
   text-decoration: underline;
@@ -26,5 +18,25 @@
   height: 75px;
   border-radius: 10px;
   border: 1px solid black;
-  margin-right: 50px;
+  margin-right: 25px;
+}
+
+.song-link-box {
+  height: 70px;
+  width: 150px;
+  justify-content: center;
+}
+
+.song-link {
+  display: flexbox;
+  margin-left: 10px;
+  margin-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 200px;
+  vertical-align: middle;
+  text-decoration: solid;
+  font-weight: bolder;
+  color: rgb(43, 79, 162);
+  text-overflow: ellipsis;
 }
